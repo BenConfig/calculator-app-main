@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html class="default" lang="en">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="dist/css/main.css">
+    
+    <title>Frontend Mentor | Calculator App</title>
+
+  </head>
+
+  <body>
+
+    <main class="calc">
+
+      <h1 class="calc__h1">calc</h1>
+
+      <!-- Theme Switch -->
+      <fieldset class="calc__theme-area" aria-live="polite">
+
+        <div class="calc__theme-area">
+        
+          <legend class="calc__legend" aria-label="Choose color theme">Theme</legend>
+
+          <input
+            class="calc__radio sr-only"
+            type="radio"
+            id="default"
+            name="theme"
+            value="default-theme"
+            aria-label="Default color theme"
+            checked>
+          <label class="calc__label calc__label--1" for="default">1</label>
+
+          <input
+            class="calc__radio sr-only"
+            type="radio"
+            id="light"
+            name="theme"
+            aria-label="Light color theme"
+            value="light-theme">
+          <label class="calc__label calc__label--2" for="light">2</label>
+
+          <input
+            class="calc__radio sr-only"
+            type="radio"
+            id="dark"
+            name="theme"
+            aria-label="Dark color theme"
+            value="dark-theme">
+          <label class="calc__label calc__label--3" for="dark">3</label>
+
+          <div class="calc__toggle-bg" aria-label="hidden">
+            <div class="calc__toggle"></div>
+          </div>
+
+        </div>
+
+      </fieldset>
+
+      <!-- Display -->
+      <p class="calc__display" aria-live="polite">0</p>
+
+      <div class="calc__keypad">
+
+        <!-- Numbers -->
+        <button class="calc__btn calc__btn--main calc__btn--0" type="button">0</button>
+        <button class="calc__btn calc__btn--main calc__btn--1" type="button">1</button>
+        <button class="calc__btn calc__btn--main calc__btn--2" type="button">2</button>
+        <button class="calc__btn calc__btn--main calc__btn--3" type="button">3</button>
+        <button class="calc__btn calc__btn--main calc__btn--4" type="button">4</button>
+        <button class="calc__btn calc__btn--main calc__btn--5" type="button">5</button>
+        <button class="calc__btn calc__btn--main calc__btn--6" type="button">6</button>
+        <button class="calc__btn calc__btn--main calc__btn--7" type="button">7</button>
+        <button class="calc__btn calc__btn--main calc__btn--8" type="button">8</button>
+        <button class="calc__btn calc__btn--main calc__btn--9" type="button">9</button>
+
+        <!-- Decimal -->
+        <button class="calc__btn calc__btn--main calc__btn--dec" type="button" aria-label="decimal">.</button>
+
+        <!-- Operations -->
+        <button class="calc__btn calc__btn--main calc__btn--plus" type="button" aria-label="plus">+</button>
+        <button class="calc__btn calc__btn--main calc__btn--minus" type="button" aria-label="minus">-</button>
+        <button class="calc__btn calc__btn--main calc__btn--times" type="button" aria-label="times">x</button>
+        <button class="calc__btn calc__btn--main calc__btn--div" type="button" aria-label="divide">/</button>
+
+        <!-- Clear Buttons -->
+        <button class="calc__btn calc__btn--clear calc__btn--del" type="button" aria-label="delete">del</button>
+        <button class="calc__btn calc__btn--clear calc__btn--reset" type="button">reset</button>
+
+        <!-- Equal Button -->
+        <button class="calc__btn calc__btn--equal" type="button">=</button>
+
+      </div>
+
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
+
+</html>

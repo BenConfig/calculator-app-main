@@ -1,0 +1,401 @@
+/* ------------------------------------------------------ */
+/*                          Fonts                         */
+/* ------------------------------------------------------ */
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+/* ------------------------------------------------------ */
+/*                    Custom Properties                   */
+/* ------------------------------------------------------ */
+:root {
+  /* -------------------- Color Themes -------------------- */
+  /* -------------------- Border Radii -------------------- */
+  --br-sm: clamp(.3125rem, 1.5vw, var(--br-md));
+  --br-md: .625rem;
+  --br-pill: 100vmax;
+  /* ---------------------- Animation --------------------- */
+  --anim: 250ms ease;
+}
+:root.default {
+  --clr-body-bg: hsl(222, 26%, 31%);
+  --clr-toggle-bg: hsl(223, 31%, 20%);
+  --clr-keypad-bg: hsl(223, 31%, 20%);
+  --clr-display-bg: hsl(224, 36%, 15%);
+  --clr-h1-text: hsl(0, 0%, 100%);
+  --clr-theme-area-text: hsl(0, 0%, 100%);
+  --clr-display-text: hsl(0, 0%, 100%);
+  --clr-btn-main-bg: hsl(30, 25%, 89%);
+  --clr-btn-main-shad: hsl(28, 16%, 65%);
+  --clr-btn-main-text: hsl(221, 14%, 31%);
+  --clr-btn-clear-bg: hsl(225, 21%, 49%);
+  --clr-btn-clear-shad: hsl(224, 28%, 35%);
+  --clr-btn-clear-text: hsl(0, 0%, 100%);
+  --clr-btn-equal-bg: hsl(6, 63%, 50%);
+  --clr-btn-equal-shad: hsl(6, 70%, 34%);
+  --clr-btn-equal-text: hsl(0, 0%, 100%);
+  --clr-hover: hsl(6, 63%, 50%);
+  --clr-focus: hsl(0, 0%, 100%);
+  --clr-scrollbar-thumb: hsl(225, 21%, 49%);
+  --clr-scrollbar-track: hsl(223, 31%, 20%);
+}
+:root.light {
+  --clr-body-bg: hsl(0, 0%, 90%);
+  --clr-toggle-bg: hsl(0, 5%, 81%);
+  --clr-keypad-bg: hsl(0, 5%, 81%);
+  --clr-display-bg: hsl(0, 0%, 93%);
+  --clr-h1-text: hsl(60, 10%, 19%);
+  --clr-theme-area-text: hsl(60, 10%, 19%);
+  --clr-display-text: hsl(60, 10%, 19%);
+  --clr-btn-main-bg: hsl(45, 7%, 89%);
+  --clr-btn-main-shad: hsl(35, 11%, 61%);
+  --clr-btn-main-text: hsl(60, 10%, 19%);
+  --clr-btn-clear-bg: hsl(185, 42%, 37%);
+  --clr-btn-clear-shad: hsl(185, 58%, 25%);
+  --clr-btn-clear-text: hsl(0, 0%, 100%);
+  --clr-btn-equal-bg: hsl(25, 98%, 40%);
+  --clr-btn-equal-shad: hsl(25, 99%, 27%);
+  --clr-btn-equal-text: hsl(0, 0%, 100%);
+  --clr-hover: hsl(25, 98%, 40%);
+  --clr-focus: hsl(60, 10%, 19%);
+  --clr-scrollbar-thumb: hsl(0, 5%, 81%);
+  --clr-scrollbar-track: hsl(0, 0%, 93%);
+}
+:root.dark {
+  --clr-body-bg: hsl(268, 75%, 9%);
+  --clr-toggle-bg: hsl(268, 71%, 12%);
+  --clr-keypad-bg: hsl(268, 71%, 12%);
+  --clr-display-bg: hsl(268, 71%, 12%);
+  --clr-h1-text: hsl(52, 100%, 62%);
+  --clr-theme-area-text: hsl(52, 100%, 62%);
+  --clr-display-text: hsl(52, 100%, 62%);
+  --clr-btn-main-bg: hsl(268, 47%, 21%);
+  --clr-btn-main-shad: hsl(290, 70%, 36%);
+  --clr-btn-main-text: hsl(52, 100%, 62%);
+  --clr-btn-clear-bg: hsl(281, 89%, 26%);
+  --clr-btn-clear-shad: hsl(285, 91%, 52%);
+  --clr-btn-clear-text: hsl(0, 0%, 100%);
+  --clr-btn-equal-bg: hsl(176, 100%, 44%);
+  --clr-btn-equal-shad: hsl(177, 92%, 70%);
+  --clr-btn-equal-text: hsl(198, 20%, 13%);
+  --clr-hover: hsl(176, 100%, 44%);
+  --clr-focus: hsl(0, 0%, 100%);
+  --clr-scrollbar-thumb: hsl(290, 70%, 36%);
+  --clr-scrollbar-track: hsl(268, 71%, 12%);
+}
+
+/* ------------------------------------------------------ */
+/*                 Resets and Global Styes                */
+/* ------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1, p,
+fieldset,
+button {
+  margin: 0;
+}
+
+fieldset,
+legend {
+  padding: 0;
+}
+
+fieldset,
+button {
+  border: none;
+}
+
+/* ------- Custom Scroll Bar (Chrome, Edge Safari) ------ */
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--clr-scrollbar-track);
+  -webkit-transition: background var(--anim);
+  transition: background var(--anim);
+}
+
+::-webkit-scrollbar-thumb {
+  border: 0.25rem solid var(--clr-scrollbar-track);
+  border-radius: 100vmax;
+  background: var(--clr-scrollbar-thumb);
+}
+
+/* ------------- Custom Scrollbar (Firefox) ------------- */
+* {
+  scrollbar-color: var(--clr-scrollbar-thumb) var(--clr-scrollbar-track);
+}
+
+.sr-only {
+  position: absolute;
+  inset: -1rem;
+  width: calc(100% + 2rem);
+  height: calc(100% + 2rem);
+  opacity: 0;
+  pointer-events: none;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  font: 1rem/1 "Spartan", sans-serif;
+  padding: clamp(1.75rem, 16vw - 2.5rem, 3rem) clamp(1.5rem, 16vw - 2.5rem, 3rem) clamp(2rem, 16vw - 2.5rem, 3rem);
+  background: var(--clr-body-bg);
+  transition: background var(--anim);
+}
+
+/* ------------------------------------------------------ */
+/*                       Calculator                       */
+/* ------------------------------------------------------ */
+.calc {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 33.75rem;
+  /* ----------------------- Heading ---------------------- */
+  /* --------------------- Theme Area --------------------- */
+}
+.calc *, .calc *::after {
+  transition: color var(--anim), background var(--anim), border var(--anim);
+}
+.calc__h1 {
+  font-size: 1.9375rem;
+  margin-top: 0.625rem;
+  margin-right: 2.5rem;
+  color: var(--clr-h1-text);
+}
+.calc__theme-area {
+  position: relative;
+  display: grid;
+  grid-template: repeat(2, auto), repeat(4, auto);
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--clr-theme-area-text);
+}
+.calc__legend {
+  grid-row: 2/3;
+  grid-column: 1/2;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  margin-right: 1rem;
+}
+.calc__label {
+  grid-row: 1/3;
+  min-width: 3rem;
+  min-height: 3rem;
+  text-align: center;
+  margin-bottom: -0.25rem;
+  cursor: pointer;
+}
+.calc__label--1 {
+  grid-column: 2/3;
+}
+.calc__label--2 {
+  grid-column: 3/4;
+}
+.calc__label--3 {
+  grid-column: 4/5;
+}
+.calc__label:hover {
+  color: var(--clr-hover);
+}
+.calc__radio:focus ~ .calc__toggle-bg {
+  outline: 0.125rem dotted var(--clr-focus);
+  outline-offset: 0.125rem;
+}
+.calc__radio:focus:not(:focus-visible) ~ .calc__toggle-bg {
+  outline: none;
+}
+.calc__radio:focus-visible ~ .calc__toggle-bg {
+  outline: 0.125rem dotted var(--clr-focus);
+  outline-offset: 0.125rem;
+}
+.calc__toggle-bg {
+  grid-row: 2/3;
+  grid-column: 2/5;
+  border: 0.3125rem solid var(--clr-toggle-bg);
+  border-radius: var(--br-pill);
+  background: var(--clr-toggle-bg);
+  pointer-events: none;
+}
+.calc__toggle {
+  width: 2.5rem;
+  height: 1rem;
+  border-radius: inherit;
+  background: var(--clr-btn-equal-bg);
+  transition: transform var(--anim);
+}
+
+.default .calc__toggle {
+  transform: translateX(0);
+}
+
+.light .calc__toggle {
+  transform: translateX(118%);
+}
+
+.dark .calc__toggle {
+  transform: translateX(236%);
+}
+
+.calc {
+  /* ----------------------- Display ---------------------- */
+  /* ----------------------- Keypad ----------------------- */
+}
+.calc__display {
+  flex: 100%;
+  font-size: clamp(1.9375rem, 7vw + .25rem, 3rem);
+  text-align: right;
+  padding: clamp(1.75rem, 6.5vw, 2.5rem) clamp(1.4375rem, 5vw, 2rem);
+  border-radius: var(--br-md);
+  margin: 2rem 0 1.5rem;
+  color: var(--clr-display-text);
+  background: var(--clr-display-bg);
+}
+.calc__keypad {
+  isolation: isolate;
+  flex: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "b7    b8    b9    del  " "b4    b5    b6    plus " "b1    b2    b3    minus" "dec   b0    div   times" "reset reset equal equal";
+  gap: 1.0625rem 0.8125rem;
+  -moz-column-gap: clamp(.8125rem, 7vw - 1rem, 1.5rem);
+       column-gap: clamp(.8125rem, 7vw - 1rem, 1.5rem);
+  row-gap: clamp(1.0625rem, 7vw - 1rem, 1.75rem);
+  padding: 1.5rem 1.5rem 1.75rem;
+  padding-top: clamp(1.5rem, 5vw, 2rem);
+  padding-inline: clamp(1.5rem, 5vw, 1.875rem);
+  padding-bottom: clamp(1.75rem, 6vw, 2.25rem);
+  border-radius: var(--br-md);
+  background: var(--clr-keypad-bg);
+}
+.calc__btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 3.75rem;
+  font-family: inherit;
+  border-radius: var(--br-sm);
+  cursor: pointer;
+  /* Grid Template Area Names */
+}
+.calc__btn:focus {
+  outline: 0.125rem dotted var(--clr-focus);
+  outline-offset: 0.25rem;
+}
+.calc__btn:focus:not(:focus-visible) {
+  outline: none;
+}
+.calc__btn:focus-visible {
+  outline: 0.125rem dotted var(--clr-focus);
+  outline-offset: 0.25rem;
+}
+.calc__btn::before, .calc__btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: inherit;
+}
+.calc__btn::after {
+  z-index: -1;
+  transform: translateY(0.25rem);
+}
+.calc__btn--main {
+  font-size: clamp(1.75rem, 5vw, 2rem);
+  padding-top: 0.5rem;
+  color: var(--clr-btn-main-text);
+  background: var(--clr-btn-main-bg);
+}
+.calc__btn--main::after {
+  background: var(--clr-btn-main-shad);
+}
+.calc__btn--clear, .calc__btn--equal {
+  font-size: clamp(1rem, 3.25vw, 1.25rem);
+  padding-top: 0.375rem;
+}
+.calc__btn--clear {
+  text-transform: uppercase;
+  color: var(--clr-btn-clear-text);
+  background: var(--clr-btn-clear-bg);
+}
+.calc__btn--clear::after {
+  background: var(--clr-btn-clear-shad);
+}
+.calc__btn--equal {
+  color: var(--clr-btn-equal-text);
+  background: var(--clr-btn-equal-bg);
+}
+.calc__btn--equal::after {
+  background: var(--clr-btn-equal-shad);
+}
+.calc__btn:active {
+  transform: translateY(0.25rem);
+}
+.calc__btn:active::before {
+  transform: translateY(-0.25rem);
+}
+.calc__btn:active::after {
+  opacity: 0;
+}
+.calc__btn--0 {
+  grid-area: b0;
+}
+.calc__btn--1 {
+  grid-area: b1;
+}
+.calc__btn--2 {
+  grid-area: b2;
+}
+.calc__btn--3 {
+  grid-area: b3;
+}
+.calc__btn--4 {
+  grid-area: b4;
+}
+.calc__btn--5 {
+  grid-area: b5;
+}
+.calc__btn--6 {
+  grid-area: b6;
+}
+.calc__btn--7 {
+  grid-area: b7;
+}
+.calc__btn--8 {
+  grid-area: b8;
+}
+.calc__btn--9 {
+  grid-area: b9;
+}
+.calc__btn--dec {
+  grid-area: dec;
+}
+.calc__btn--plus {
+  grid-area: plus;
+}
+.calc__btn--minus {
+  grid-area: minus;
+}
+.calc__btn--times {
+  grid-area: times;
+}
+.calc__btn--div {
+  grid-area: div;
+}
+.calc__btn--del {
+  grid-area: del;
+}
+.calc__btn--reset {
+  grid-area: reset;
+}
+.calc__btn--equal {
+  grid-area: equal;
+}/*# sourceMappingURL=main.css.map */
