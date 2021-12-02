@@ -182,7 +182,7 @@ body {
   grid-column: 1/2;
   letter-spacing: 0.075em;
   text-transform: uppercase;
-  margin-right: 1rem;
+  transform: translate(-4rem, 2.3125rem);
 }
 .calc__label {
   grid-row: 1/3;
