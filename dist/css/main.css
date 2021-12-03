@@ -337,7 +337,7 @@ body {
   background: var(--clr-btn-equal-shad);
 }
 .calc__btn:active {
-  transform: translateY(0.25rem);
+  transform: translateY(0.25rem) scale(0.98);
 }
 .calc__btn:active::before {
   transform: translateY(-0.25rem);

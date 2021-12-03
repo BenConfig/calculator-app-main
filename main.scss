@@ -379,7 +379,7 @@ body {
         }
 
         &:active {
-            transform: translateY(.25rem);
+            transform: translateY(.25rem) scale(.98);
 
             &::before { transform: translateY(-.25rem); }
 
